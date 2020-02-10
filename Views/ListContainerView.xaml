@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Spis.Views.ListContainerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spis.Views"
+             mc:Ignorable="d" 
+             Background="LightCyan"
+             d:DesignHeight="100" d:DesignWidth="700">
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*" Name="ColumnDefinition" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <Label Content="{Binding orderNumber}" Grid.Column="0"  HorizontalContentAlignment="Left" FontSize="14" VerticalContentAlignment="Center"></Label>
+        <Border x:Name="a" Grid.Column="1" Margin="10"></Border>
+        <TextBlock Grid.Column="1" Text="{Binding Description}" Width="{Binding ActualWidth, ElementName=a}" FontSize="13" TextAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" TextTrimming="CharacterEllipsis"/>
+        
+        <Label Grid.Column="2" Content="{Binding daysLeft}"></Label>
+
+    </Grid>
+</UserControl>
